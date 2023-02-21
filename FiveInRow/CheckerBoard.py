@@ -32,18 +32,12 @@ class CheckerBoard:
             # draw cols
             self.canvas.create_line(self.gap * i, self.gap, self.gap * i, 15 * self.gap, fill=self.color, width=4)
         # draw 5 dots
-        self.canvas.create_rectangle(self.gap * 4 - 10, self.gap * 4 - 10, self.gap * 4 + 10, self.gap * 4 + 10,
-                                     fill=self.color)
-        self.canvas.create_rectangle(self.gap * 12 - 10, self.gap * 4 - 10, self.gap * 12 + 10, self.gap * 4 + 10,
-                                     fill=self.color)
-        self.canvas.create_rectangle(self.gap * 8 - 10, self.gap * 8 - 10, self.gap * 8 + 10, self.gap * 8 + 10,
-                                     fill=self.color)
-        self.canvas.create_rectangle(self.gap * 4 - 10, self.gap * 12 - 10, self.gap * 4 + 10, self.gap * 12 + 10,
-                                     fill=self.color)
-        self.canvas.create_rectangle(self.gap * 4 - 10, self.gap * 12 - 10, self.gap * 4 + 10, self.gap * 12 + 10,
-                                     fill=self.color)
-        self.canvas.create_rectangle(self.gap * 12 - 10, self.gap * 12 - 10, self.gap * 12 + 10, self.gap * 12 + 10,
-                                     fill=self.color)
+        self.canvas.create_rectangle(self.gap * 4 - 10, self.gap * 4 - 10, self.gap * 4 + 10, self.gap * 4 + 10, fill=self.color)
+        self.canvas.create_rectangle(self.gap * 12 - 10, self.gap * 4 - 10, self.gap * 12 + 10, self.gap * 4 + 10, fill=self.color)
+        self.canvas.create_rectangle(self.gap * 8 - 10, self.gap * 8 - 10, self.gap * 8 + 10, self.gap * 8 + 10, fill=self.color)
+        self.canvas.create_rectangle(self.gap * 4 - 10, self.gap * 12 - 10, self.gap * 4 + 10, self.gap * 12 + 10, fill=self.color)
+        self.canvas.create_rectangle(self.gap * 4 - 10, self.gap * 12 - 10, self.gap * 4 + 10, self.gap * 12 + 10, fill=self.color)
+        self.canvas.create_rectangle(self.gap * 12 - 10, self.gap * 12 - 10, self.gap * 12 + 10, self.gap * 12 + 10, fill=self.color)
         self.canvas.create_rectangle(self.gap * 16, self.gap, self.gap * 21, self.gap * 15, outline=self.color, width=4)
         self.canvas.create_text(self.gap * 18, self.gap * 2, text="White: " + self.player1.name, fill='black', font=('Helvetica 15'))
         self.canvas.create_text(self.gap * 18, self.gap * 3, text="Black: " + self.player2.name, fill='black', font=('Helvetica 15'))
@@ -51,7 +45,6 @@ class CheckerBoard:
         self.winner_text = self.canvas.create_text(self.gap * 18, self.gap * 6, text="Winner: ", fill='black', font=('Helvetica 16'))
         button = ttk.Button(self.canvas, text="Restart", command=self.restart)
         self.canvas.create_window(self.gap * 18.5, self.gap * 8, window=button)
-
         self.update_board()
 
     def place_piece(self, event):
@@ -173,9 +166,3 @@ class CheckerBoard:
         self.place_turn = "White"
         self.started = True
         self.draw()
-
-
-
-
-
-
